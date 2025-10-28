@@ -16,4 +16,12 @@ if (bar) {
 }
 
 
+// Redirect to single product page
+document.querySelectorAll(".pro").forEach(product => {
+  product.addEventListener("click", (e) => {
+    if (e.target.closest(".cart")) return; // ignore cart clicks
+    const id = product.dataset.id;
+    if (id) window.location.href = `sproduct.html?id=${id}`;
+  });
+});
 

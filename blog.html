@@ -1,19 +1,292 @@
+<script>
+const PRODUCTS = {
+  f1: {
+    title: "Cartoon Astronaut T-shirt",
+    price: "$78",
+    desc: "Soft cotton tee with playful astronaut design. Perfect for casual outings or lounging at home.",
+    images: ["img/products/f1.jpg", "img/products/f2.jpg", "img/products/f3.jpg", "img/products/f4.jpg"]
+  },
+  f2: {
+    title: "Tropical Palm Leaf Shirt",
+    price: "$82",
+    desc: "Short-sleeve tropical shirt made from breathable cotton. Ideal for summer vacations.",
+    images: ["img/products/f2.jpg", "img/products/f1.jpg", "img/products/f3.jpg", "img/products/f4.jpg"]
+  },
+  f3: {
+    title: "Vintage Floral Casual Shirt",
+    price: "$76",
+    desc: "Retro-inspired floral print shirt with a soft, light feel — a versatile style statement.",
+    images: ["img/products/f3.jpg", "img/products/f4.jpg", "img/products/f2.jpg", "img/products/f1.jpg"]
+  },
+  f4: {
+    title: "Sakura Blossom Shirt",
+    price: "$80",
+    desc: "Elegant shirt featuring sakura flower patterns for a stylish, minimal look.",
+    images: ["img/products/f4.jpg", "img/products/f2.jpg", "img/products/f3.jpg", "img/products/f1.jpg"]
+  },
+  n1: {
+    title: "Light Blue Formal Shirt",
+    price: "$88",
+    desc: "Classic formal shirt in light blue tone. Great for both office and evening events.",
+    images: ["img/products/n1.jpg", "img/products/n2.jpg", "img/products/n3.jpg", "img/products/n4.jpg"]
+  },
+  n2: {
+    title: "Grey Check Business Shirt",
+    price: "$89",
+    desc: "Professional grey check shirt made from soft, wrinkle-resistant cotton blend.",
+    images: ["img/products/n2.jpg", "img/products/n1.jpg", "img/products/n3.jpg", "img/products/n4.jpg"]
+  },
+  n3: {
+    title: "White Linen Button-Up",
+    price: "$79",
+    desc: "Breathable linen shirt with minimal design — perfect for summer elegance.",
+    images: ["img/products/n3.jpg", "img/products/n1.jpg", "img/products/n2.jpg", "img/products/n4.jpg"]
+  },
+  n8: {
+    title: "Black Formal Shirt",
+    price: "$95",
+    desc: "A timeless black formal shirt that pairs perfectly with trousers or jeans.",
+    images: ["img/products/n8.jpg", "img/products/n2.jpg", "img/products/n3.jpg", "img/products/n4.jpg"]
+  }
+};
+
+// Get the product ID from the URL
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const data = PRODUCTS[id] || PRODUCTS["f1"]; // fallback to f1
+
+// Populate the product details
+document.querySelector(".single-pro-details h4").textContent = data.title;
+document.querySelector(".single-pro-details h2").textContent = data.price;
+document.querySelector(".single-pro-details span").textContent = data.desc;
+document.getElementById("MainImg").src = data.images[0];
+
+// Update thumbnails
+const thumbContainer = document.querySelector(".small-img-group");
+thumbContainer.innerHTML = data.images.map(img =>
+  `<div class="small-img-col"><img src="${img}" class="small-img" width="100%" /></div>`
+).join("");
+
+// Thumbnail click logic
+setTimeout(() => {
+  const MainImg = document.getElementById("MainImg");
+  const smallimgs = document.querySelectorAll(".small-img");
+  smallimgs.forEach(img => {
+    img.addEventListener("click", () => {
+      MainImg.src = img.src;
+    });
+  });
+}, 100);
+</script>
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tech2etc Ecommerce Tutorial</title>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech2etc Ecommerce Tutorial</title>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
-    <body>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-        <script src="script.js"></script>
-    </body>
+<body>
+
+    <section id="header">
+        <a href="#"><img src="img/logo.png" class="logo" alt=""></a>
+
+        <div>
+            <u1 id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a class="active" href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </u1>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+
+        </div>
+    </section>
+    <!-- Blog details -->
+
+ <!-- Page header banner -->
+<section id="page-header" class="blog-header">
+  <h2>#Readmore</h2>
+  <p>Latest stories, tips & trends</p>
+</section>
+
+<!-- Blog list -->
+<section id="blog" class="section-p1">
+  <!-- 1 -->
+  <div class="blog-box">
+    <div class="blog-img">
+      <img src="img/blog/b1.jpg" alt="The Cotton-Jersey Zip-Up Hoodie">
+    </div>
+    <div class="blog-details">
+      <h4>The Cotton-Jersey Zip-Up Hoodie</h4>
+      <p>Kickstarter man braid godard coloring book. Raclette waistcoat selfies yr wolf, chartreuse hexagon irony…</p>
+      <a href="#">CONTINUE READING</a>
+    </div>
+    <h1>13/01</h1>
+  </div>
+
+  <!-- 2 -->
+  <div class="blog-box">
+    <div class="blog-img">
+      <img src="img/blog/b2.jpg" alt="How to Style a Quiff">
+    </div>
+    <div class="blog-details">
+      <h4>How to Style a Quiff</h4>
+      <p>Shabby chic microdosing enamel pin. Cornhole vegan tote bag actually ethical you probably haven’t heard of…</p>
+      <a href="#">CONTINUE READING</a>
+    </div>
+    <h1>17/02</h1>
+  </div>
+
+  <!-- 3 -->
+  <div class="blog-box">
+    <div class="blog-img">
+      <img src="img/blog/b3.jpg" alt="Must-Have Skater Girl Items">
+    </div>
+    <div class="blog-details">
+      <h4>Must-Have Skater Girl Items</h4>
+      <p>Normcore selfies unicorn meditation hoodie try-hard adaptogen keffiyeh master cleanse post-ironic…</p>
+      <a href="#">CONTINUE READING</a>
+    </div>
+    <h1>05/03</h1>
+  </div>
+
+  <!-- 4 -->
+  <div class="blog-box">
+    <div class="blog-img">
+      <img src="img/blog/b4.jpg" alt="Runway-Inspired Trends">
+    </div>
+    <div class="blog-details">
+      <h4>Runway-Inspired Trends</h4>
+      <p>Chambray lomo deep v gluten-free DSA locavore brunch praxis biodiesel ugh sustainable copper mug…</p>
+      <a href="#">CONTINUE READING</a>
+    </div>
+    <h1>26/03</h1>
+  </div>
+
+  <!-- 5 -->
+  <div class="blog-box">
+    <div class="blog-img">
+      <img src="img/blog/b5.jpg" alt="AW20 Menswear Trends">
+    </div>
+    <div class="blog-details">
+      <h4>AW20 Menswear Trends</h4>
+      <p>Art party everyday carry prism Brooklyn chillwave readymade umami palo santo tote bag helvetica…</p>
+      <a href="#">CONTINUE READING</a>
+    </div>
+    <h1>09/04</h1>
+  </div>
+</section>
+
+
+
+
+
+    <section id="pagination" class="section-p1">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
+    </section>
+
+
+    <section id="newsletter" class="section-p1" section-m1>
+        <div class="newstext">
+            <h4>Sign Up for Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="your email address">
+            <button class="normal">Sign Up</button>
+
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img src="img/logo.png" class="logo" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> An der villa bolle , Street 1, Berlin</p>
+            <p><strong>Phone:</strong> +0 17630781909 / (+91) 7034153795</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p class="pay-title">Secured Payment Gateways</p>
+            <img class="pay-strip" src="img/pay/pay.png" alt="">
+        </div>
+
+
+        <div class="copyright">
+            <p>© 2025 Makkus shopping — HTML CSS Ecommerce Template</p>
+        </div>
+    </footer>
+
+    <script>
+        let MainImg = document.getElementById("MainImg");
+        let smallimg = document.getElementsByClassName("small-img");
+
+        smallimg[0].onclick = function () {
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function () {
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function () {
+            MainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function () {
+            MainImg.src = smallimg[3].src;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
 
 </html>
+i need to click one product then it swictj to next pro

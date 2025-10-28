@@ -106,7 +106,7 @@
                 <img src="img/products/f2.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Tropical Palm Leaf Shirt</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -122,7 +122,7 @@
                 <img src="img/products/f3.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Vintage Floral Casual Shirt</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -138,7 +138,7 @@
                 <img src="img/products/f4.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Sakura Blossom Shirt</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -154,7 +154,7 @@
                 <img src="img/products/f5.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Navy Garden Print Shirt</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -170,7 +170,7 @@
                 <img src="img/products/f6.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Dual-Tone Linen Shirt</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -186,7 +186,7 @@
                 <img src="img/products/f7.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Relaxed Beige Linen Pants</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -202,7 +202,7 @@
                 <img src="img/products/f8.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Abstract Oversized Top</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -219,7 +219,7 @@
                 <img src="img/products/n1.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Light Blue Formal Shirt</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -236,7 +236,7 @@
                 <img src="img/products/n2.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Grey Check Business Shirts</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -252,7 +252,7 @@
                 <img src="img/products/n3.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>White Linen Button-Up</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -268,7 +268,7 @@
                 <img src="img/products/n4.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <h5>Desert Khaki Shirt</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -356,25 +356,103 @@
             <p>© 2025 Makkus shopping — HTML CSS Ecommerce Template</p>
         </div>
     </footer>
+/*
+ <script>
+  // Product info list
+  const PRODUCTS = {
+    f1: {
+      title: "Cartoon Astronaut T-shirt",
+      price: "$78",
+      desc: "Soft cotton tee with a playful astronaut design — perfect for casual days or lounging.",
+      images: ["img/products/f1.jpg", "img/products/f2.jpg", "img/products/f3.jpg", "img/products/f4.jpg"]
+    },
+    f2: {
+      title: "Tropical Palm Leaf Shirt",
+      price: "$82",
+      desc: "Breezy short-sleeve shirt with tropical leaf prints — ideal for summer adventures.",
+      images: ["img/products/f2.jpg", "img/products/f3.jpg", "img/products/f4.jpg", "img/products/f5.jpg"]
+    },
+    f3: {
+      title: "Vintage Floral Casual Shirt",
+      price: "$76",
+      desc: "Retro-inspired floral pattern shirt that adds a touch of charm to your outfit.",
+      images: ["img/products/f3.jpg", "img/products/f4.jpg", "img/products/f5.jpg", "img/products/f6.jpg"]
+    },
+    n8: {
+      title: "Black Formal Shirt",
+      price: "$95",
+      desc: "Timeless black shirt that works for every occasion — elegant and versatile.",
+      images: ["img/products/n8.jpg", "img/products/n7.jpg", "img/products/n6.jpg", "img/products/n5.jpg"]
+    }
+  };
 
-    <script>
-        let MainImg = document.getElementById("MainImg");
-        let smallimg = document.getElementsByClassName("small-img");
+  // Read ?id= from URL
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const product = PRODUCTS[id] || PRODUCTS["f1"];
 
-        smallimg[0].onclick = function () {
-            MainImg.src = smallimg[0].src;
-        }
-        smallimg[1].onclick = function () {
-            MainImg.src = smallimg[1].src;
-        }
-        smallimg[2].onclick = function () {
-            MainImg.src = smallimg[2].src;
-        }
-        smallimg[3].onclick = function () {
-            MainImg.src = smallimg[3].src;
-        }
-    </script>
-    <script src="script.js"></script>
+  // Update page content
+  document.querySelector(".single-pro-details h4").textContent = product.title;
+  document.querySelector(".single-pro-details h2").textContent = product.price;
+  document.querySelector(".single-pro-details span").textContent = product.desc;
+
+  const mainImg = document.getElementById("MainImg");
+  const smallImgGroup = document.querySelector(".small-img-group");
+
+  mainImg.src = product.images[0];
+  smallImgGroup.innerHTML = product.images
+    .map(img => `<div class="small-img-col"><img src="${img}" width="100%" class="small-img"></div>`)
+    .join("");
+
+  // Click thumbnail = change main image
+  setTimeout(() => {
+    document.querySelectorAll(".small-img").forEach(img => {
+      img.addEventListener("click", () => {
+        mainImg.src = img.src;
+      });
+    });
+  }, 100);
+</script>
+<script>
+  // Same PRODUCTS map you already use for sproduct
+  const CART_KEY = "makkus_cart";
+
+  function addToCart(item) {
+    const cart = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+    // if same id exists, increase qty
+    const idx = cart.findIndex(i => i.id === item.id);
+    if (idx > -1) {
+      cart[idx].qty += item.qty;
+    } else {
+      cart.push(item);
+    }
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  }
+
+  // Bind the Add To Cart button
+  document.querySelector(".single-pro-details .normal").addEventListener("click", () => {
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id") || "f1";
+    const p = PRODUCTS[id] || PRODUCTS["f1"];
+
+    // price string like "$78" -> cents
+    const priceCents = Math.round(parseFloat((p.price || "$78").replace(/[^\d.]/g, "")) * 100);
+    const qty = Math.max(1, parseInt(document.querySelector('.single-pro-details input[type="number"]').value || "1", 10));
+
+    addToCart({
+      id,
+      title: p.title,
+      img: p.images ? p.images[0] : "img/products/f1.jpg",
+      priceCents,
+      qty
+    });
+
+    // Optional: go to cart right away
+    window.location.href = "cart.html";
+  });
+</script>
+*/
+
 </body>
 
 </html>
